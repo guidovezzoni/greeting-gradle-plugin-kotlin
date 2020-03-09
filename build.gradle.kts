@@ -1,7 +1,8 @@
 plugins {
-    kotlin("jvm")  version "1.3.70"
+    kotlin("jvm") version "1.3.70"
     id("java-gradle-plugin")
-    id ("com.gradle.plugin-publish") version "0.10.1"
+    id("com.gradle.plugin-publish") version "0.10.1"
+    `maven-publish`
 }
 
 repositories {
@@ -21,6 +22,7 @@ gradlePlugin {
     plugins {
         create("greetingsPlugin") {
             id = "com.guidovezzoni.greetingkotlin"
+            group = "com.guidovezzoni"
             version = "1.0.1"
             displayName = "Greeting Plugin"
             description = "Template for people to start their own plugin adventure - in Kotlin"
