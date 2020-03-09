@@ -1,5 +1,5 @@
 plugins {
-    java
+    kotlin("jvm")  version "1.3.70"
     id("java-gradle-plugin")
     id ("com.gradle.plugin-publish") version "0.10.1"
 }
@@ -9,6 +9,7 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib", "1.3.70"))
     testCompile("junit", "junit", "4.12")
 }
 
@@ -20,7 +21,7 @@ gradlePlugin {
     plugins {
         create("greetingsPlugin") {
             id = "com.guidovezzoni.greetingkotlin"
-            version = "1.0.0"
+            version = "1.0.1"
             displayName = "Greeting Plugin"
             description = "Template for people to start their own plugin adventure - in Kotlin"
             implementationClass = "com.guidovezzoni.greetingkotlin.GreetingPlugin"
@@ -33,3 +34,4 @@ pluginBundle {
     vcsUrl = "https://github.com/guidovezzoni/greeting-gradle-plugin-kotlin.git"
     tags = listOf("example", "template", "kotlin")
 }
+
