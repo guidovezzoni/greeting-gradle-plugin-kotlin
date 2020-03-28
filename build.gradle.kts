@@ -10,10 +10,17 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib", "1.3.70"))
+    implementation("com.android.tools.build:gradle:3.3.0")
 
-    testCompile("junit", "junit", "4.12")
+//    testCompile("junit", "junit", "4.12")
 }
+
+allprojects {
+    repositories {
+        google()
+    }
+}
+
 
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
